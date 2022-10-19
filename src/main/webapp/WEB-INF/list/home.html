@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+<meta charset="UTF-8">
+<title>ducminhhuy</title>
+</head>
+<body>
+<h3>home</h3>
+<p>
+  <a th:href="@{/home}">back</a>
+</p>
+<form th:action="@{login}" method="post" th:object="${login}" modelAttribute="login" novalidate="novalidate">
+  <fieldset>
+    <legend>Login</legend>
+  </fieldset>
+  <tr>
+    <td><th:form:label th:path="*{account}">Account</th:form:label></td>
+    <td><th:form:input th:path="*{account}"></th:form:input></th:form></td>
+  </tr>
+  <tr>
+    <td><th:form:label th:path="password">Password</th:form:label></td>
+    <td><th:form:input th:path="password"></th:form:input></th:form></td>
+  </tr>
+  <tr>
+    <td><th:form:button>Login</th:form:button></td>
+  </tr>
+</form>
+<footer th:replace="/layout::footer"></footer>
+</body>
+</html>
